@@ -7,7 +7,7 @@ PRODUCT_NAME := cm_chagallwifi
 PRODUCT_DEVICE := chagallwifi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_MODEL=SM-T520 \
+    PRODUCT_MODEL=SM-T800 \
     PRODUCT_NAME=chagallwifi \
     PRODUCT_DEVICE=chagallwifi \
     TARGET_DEVICE=chagallwifi \
