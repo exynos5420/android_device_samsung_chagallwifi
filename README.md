@@ -1,2 +1,2 @@
-SM-T520 device repo for CyangenMod.
+SM-T800 device repo for CyangenMod.
 
