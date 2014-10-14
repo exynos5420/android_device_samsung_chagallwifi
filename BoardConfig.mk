@@ -55,6 +55,8 @@ BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_CONFIG := cyanogenmod_chagallwifi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos5420
 
+#TARGET_PREBUILT_KERNEL := device/samsung/chagallwifi/kernel
+
 # Battery
 BOARD_BATTERY_DEVICE_NAME := battery
 
