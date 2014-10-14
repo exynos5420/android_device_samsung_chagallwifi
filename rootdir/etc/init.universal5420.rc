@@ -1,25 +1,25 @@
 import init.universal5420.usb.rc
-import init.universal5420.wifi.rc
-import init.samsung.rc
+import init.wifi.rc
+import init.fac.rc
 
 on init
-    # Set permissions for persist partition
-    mkdir /persist 0771 system system
+
+    mkdir /preload 0771 system system
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/media_rw/extSdCard 0700 media_rw media_rw
+    mkdir /mnt/media_rw/UsbDriveA 0700 media_rw media_rw
+    mkdir /mnt/media_rw/UsbDriveB 0700 media_rw media_rw
+    mkdir /mnt/media_rw/UsbDriveC 0700 media_rw media_rw
+    mkdir /mnt/media_rw/UsbDriveD 0700 media_rw media_rw
+    mkdir /mnt/media_rw/UsbDriveE 0700 media_rw media_rw
+    mkdir /mnt/media_rw/UsbDriveF 0700 media_rw media_rw
+    
+    # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /mnt/shell/container 0700 system system
-    mkdir /storage 0550 system sdcard_r
-    mkdir /storage/emulated 0555 root root
-
-    #External storage directories
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/usbdisk 0000 system system
-    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
-
-    mkdir /storage/sdcard1 0700 root root
-    mkdir /storage/usbdisk 0700 root root
+    mkdir /storage/emulated 0555 root root    
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
 
@@ -28,28 +28,31 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /mnt/shell/container /storage/container
-    symlink /storage/sdcard1 /extSdCard
-    symlink /storage/sdcard1 /mnt/extSdCard
-    symlink /storage/sdcard1 /external_sd
-    symlink /storage/usbdisk /usbdisk
-    symlink /storage/usbdisk /mnt/usbdisk
+
+    # map "real" external storages paths also in same way. backwards compatibility.
+    symlink /storage/extSdCard /mnt/extSdCard
+    symlink /storage/UsbDriveA /mnt/UsbDriveA
+    symlink /storage/UsbDriveB /mnt/UsbDriveB
+    symlink /storage/UsbDriveC /mnt/UsbDriveC
+    symlink /storage/UsbDriveD /mnt/UsbDriveD
+    symlink /storage/UsbDriveE /mnt/UsbDriveE
+    symlink /storage/UsbDriveF /mnt/UsbDriveF
+
+    export SECONDARY_STORAGE /storage/extSdCard
+    
+    mkdir /storage/extSdCard 0700 root root
+    mkdir /storage/UsbDriveA 0700 root root
+    mkdir /storage/UsbDriveB 0700 root root
+    mkdir /storage/UsbDriveC 0700 root root
+    mkdir /storage/UsbDriveD 0700 root root
+    mkdir /storage/UsbDriveE 0700 root root
+    mkdir /storage/UsbDriveF 0700 root root
 
     mkdir /efs 0771 radio system
 
-on early-init
-    write /sys/block/mmcblk0/queue/read_ahead_kb 512
-    write /sys/block/mmcblk1/queue/read_ahead_kb 512
-    write /sys/block/mmcblk0/queue/scheduler noop
-
-on property:sys.boot_completed=1
-    write /sys/block/mmcblk0/queue/scheduler row
-
-    # Configure the cpu-boost module
-    write /sys/module/cpu_boost/parameters/boost_ms 10
-    write /sys/module/cpu_boost/parameters/sync_threshold 1500000
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1200000
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    #Private Mode
+    mkdir /mnt/shell/privatemode 0700 system system
+    mkdir /storage/Private 0000 system system
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
@@ -61,6 +64,8 @@ on post-fs-data
 # Permissions for bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth net_bt_stack ro.bt.bdaddr_path
+    chown radio net_bt_stack /efs/bluetooth/bt_addr
+    chmod 0640 /efs/bluetooth/bt_addr
     chown bluetooth net_bt_stack /dev/ttySAC0
     chmod 0660 /dev/ttySAC0
     chmod 0660 /sys/class/rfkill/rfkill0/state
@@ -75,8 +80,10 @@ on post-fs-data
     mkdir /efs/drm 0700 drm system
     mkdir /efs/drm/playready 0775 drm system
 
-    #Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
+#Private Mode
+    mkdir /data/privatemode 0770 system system
+    chown system system /data/privatemode
+    restorecon /data/privatemode
 
 # Bluetooth dhcpcd config
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
@@ -131,32 +138,32 @@ on boot
 # CS socket
     mkdir /dev/socket/cs_socket 0770 system system
 
+# Permissions for gpio_keys
+    chown system radio /sys/class/sec/sec_key/wakeup_keys
+    write /sys/class/sec/sec_key/wakeup_keys 116,172
+
 # Permissions for TouchScreen
     chown system radio /sys/class/sec/tsp/cmd
-    chown system system /sys/class/input/input1/enabled
-    chmod 0660 /sys/class/input/input1/enabled
-	chown system radio /sys/class/sec/sec_touchscreen/set_tsp_for_inputmethod
-
+    chown system radio /sys/class/input/input1/enabled
+    
 # Permissions for Touchkey
-    chown system radio /sys/class/sec/sec_touchkey/enable_disable
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_brightness
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_menu
+    chown system radio /sys/class/sec/sec_touchkey/brightness
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent
     chown system radio /sys/class/sec/sec_touchkey/touchkey_back
-    chown system radio /sys/class/sec/sec_touchkey/touch_update
-    chown system radio /sys/class/sec/sec_touchkey/touch_version
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_menu
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_back
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_back_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_menu_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_back_raw
     chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
     chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
     chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
     chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
-    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
     chown system radio /sys/class/sec/sec_touchkey/touchkey_threshold
-    chown system system /sys/devices/virtual/sec/sec_touchkey/brightness
-    chown system radio /sys/class/sec/sec_touchkey/extra_button_event
-    chown root system /sys/class/sec/sec_touchkey/tsp_keys_enabled
-
-# Permissions for gpio_keys
-    chown radio system /sys/class/sec/sec_key/wakeup_keys
-    write /sys/class/sec/sec_key/wakeup_keys 116,172
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_factory_mode
+    chown system radio /sys/class/sec/sec_touchkey/glove_mode
+    chown system radio /sys/class/input/input8/enabled
 
 # SENSORS
 # Accelerometer_sensor
@@ -212,21 +219,25 @@ on boot
 
 # Permissions Camera
     chown system radio /sys/class/camera/rear/rear_camfw
+    chown system radio /sys/class/camera/rear/rear_camfw_full
     chown system radio /sys/class/camera/rear/rear_camtype
+    chown system radio /sys/class/camera/rear/rear_calcheck
+    chown system radio /sys/class/camera/rear/isp_core
     chown system radio /sys/class/camera/flash/rear_flash
-#    chown system radio /sys/class/camera/rear/isp_core
     chown system radio /sys/class/camera/front/front_camfw
     chown system radio /sys/class/camera/front/front_camtype
 
-# Switch Device
-    chown system radio /sys/class/sec/switch/otg_test
-    chown system radio /sys/class/sec/switch/adc
-    chown system radio /sys/class/sec/switch/apo_factory
+#Permissions for Camera to flush cache buffers
+    chown system system /sys/devices/virtual/sec/sec_misc/drop_caches
+
+# MUIC
+    chown system system /sys/class/sec/switch/unmasking_muic_int
 
 # OTG_TEST
     chown system radio /sys/class/host_notify/usb_otg/booster
     chmod 0660 /sys/class/host_notify/usb_otg/booster
 
+# SSWAP
     write /proc/sys/vm/swappiness 130
 
 # PMS DVFS
@@ -325,57 +336,52 @@ on boot
     chown radio system /sys/class/secgpio_check/secgpio_check_all/gpiosleep_check
     chown radio system /sys/class/secgpio_check/secgpio_check_all/checked_sleepGPIO
 
-# IR_LED
-    chown system radio /sys/class/sec/sec_ir/ir_send
-    chown system radio /sys/class/sec/sec_ir/ir_send_result
-
 # Permissions for Barcode Emul
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_send
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_ver_check
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_led_status
 
 on fs
-
-# Support Preload install apks
-    mkdir /preload 0771 system system
-
     mount_all /fstab.universal5420
+    exec /sbin/mount.sh
     setprop ro.crypto.fuse_sdcard true
+
+    chown radio system /efs
+    chmod 0771 /efs
 
 #For Absolute Persistence Partition 
     mkdir /persdata 0755 system system 
     mkdir /persdata/absolute 0750 system system 
       
     wait /dev/block/platform/dw_mmc.0/by-name/PERSDATA 
-    # check_fs /dev/block/platform/dw_mmc.0/by-name/PERSDATA ext4 
+    check_fs /dev/block/platform/dw_mmc.0/by-name/PERSDATA ext4 
     mount ext4 /dev/block/platform/dw_mmc.0/by-name/PERSDATA /persdata/absolute nosuid nodev barrier=1 
       
     chown system system /persdata 
     chmod 0755 /persdata 
     chown system system /persdata/absolute 
-    chmod 0750 /persdata/absolute 
+    chmod 0750 /persdata/absolute
+
 
 # Permissions for backlight
     chown system system /sys/class/backlight/panel/brightness
+    chown system system /sys/class/backlight/panel/auto_brightness
 
 # Permissions for LCD
     chown system radio /sys/class/lcd/panel/lcd_type
+    chown system system /sys/class/lcd/panel/power_reduce
+    chown system system /sys/class/lcd/panel/siop_enable
+    chown system system /sys/class/lcd/panel/temperature
 
 # Permissions for MDNIE
     chown system media_rw /sys/class/mdnie/mdnie/mode
     chown system media_rw /sys/class/mdnie/mdnie/scenario
     chown system system /sys/class/mdnie/mdnie/accessibility
-    chown system system  /sys/class/mdnie/mdnie/cabc
     chown system system  /sys/class/mdnie/mdnie/bypass
-
- # Permissions for TCON
-    chown system system /sys/class/tcon/tcon/lux
-    chown system system /sys/class/tcon/tcon/auto_br
-    chown system media_rw /sys/class/tcon/tcon/mode
+    chown system system /sys/class/mdnie/mdnie/auto_brightness
+    chown system system /sys/class/mdnie/mdnie/sensorRGB
 
 # Switch Device
-    chown system radio /sys/class/sec/switch/uart_sel
-    chown system radio /sys/class/sec/switch/usb_sel
     chown system radio /sys/class/sec/switch/usb_state
     chown system radio /sys/class/sec/switch/chg_type
 
@@ -395,38 +401,70 @@ on fs
     chown system system /data/system/gps
     rm /data/gps_started
     rm /data/glonass_started
+    rm /data/beidou_started
     rm /data/smd_started
     rm /data/sv_cno.info
 
-# Permissions Camera
-    chown system radio /sys/class/camera/rear/rear_camfw
-    chown system radio /sys/class/camera/rear/rear_camtype
-    chown system radio /sys/class/camera/flash/rear_flash
-#    chown system radio /sys/class/camera/rear/isp_core
-    chown system radio /sys/class/camera/front/front_camfw
-    chown system radio /sys/class/camera/front/front_camtype
+# Fingerprint
+    mkdir /dev/validity 0770 system system
 
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
+# umount service
+service umount_service /system/bin/umount /preload
+    disabled
     oneshot
 
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
+on property:persist.sys.storage_preload=1
+    mount ext4 /dev/block/mmcblk0p20 /preload nosuid nodev noatime wait ro
+    setprop storage.preload.complete 1
+
+on property:persist.sys.storage_preload=0
+    start umount_service
+
+# virtual sdcard daemon running as media_rw (1023)
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l -r /data/media /mnt/shell/emulated
+    class late_start
+    oneshot
+    
+service fuse_extSdCard /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d -f /mnt/media_rw/extSdCard /storage/extSdCard
     class late_start
     disabled
+    oneshot
 
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
+service fuse_UsbDriveA /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveA /storage/UsbDriveA
     class late_start
     disabled
+    oneshot
 
-on property:ro.fuse_sdcard=true
-    start sdcard
+service fuse_UsbDriveB /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveB /storage/UsbDriveB
+    class late_start
+    disabled
+    oneshot
+
+service fuse_UsbDriveC /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveC /storage/UsbDriveC
+    class late_start
+    disabled
+    oneshot
+
+service fuse_UsbDriveD /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveD /storage/UsbDriveD
+    class late_start
+    disabled
+    oneshot
+
+service fuse_UsbDriveE /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveE /storage/UsbDriveE
+    class late_start
+    disabled
+    oneshot
+
+service fuse_UsbDriveF /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveF /storage/UsbDriveF
+    class late_start
+    disabled
+    oneshot
 
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /sbin/watchdogd 10 20
     class core
     seclabel u:r:watchdogd:s0
-	disabled
+    disabled
 
 # Bluetooth LE 2 wired Test
 service LE_dut_cmd_on /system/bin/bttestintf enable
@@ -454,19 +492,12 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
 
 # Kick watchdogd if debug_level is low
 on property:ro.debug_level=0x4f4c
-	start watchdogd
+    start watchdogd
 
 # on userdebug and eng builds, enable kgdb on the serial console
 on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
-# SecEDS
-service TvoutService_C /system/bin/bintvoutservice
-     class main
-     user system
-     group graphics
-on property:ro.SecEDS.enable=false
-    stop TvoutService_C
 
 # GPS
 service gpsd /system/bin/gpsd -c /system/etc/gps.xml
@@ -481,12 +512,20 @@ service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF0000000000000
     user system
     group system    
 
+#Private Mode
+service privatemode /system/bin/sdcard /data/privatemode /mnt/shell/privatemode 1000 1000
+    class late_start
+    oneshot
+
 # LPM
-on charger
+on property:ro.bootmode=charger
     mount ext4 /dev/block/mmcblk0p18 /system wait ro
+    copy /system/etc/battery_charging_temp.data /sys/class/power_supply/battery/batt_temp_table
+
+on property:ro.bootmode=charger
     class_start sec-charger
 
-service sec-playlpm /system/bin/lpm
+service playlpm /system/bin/lpm
     class sec-charger
     critical
 
@@ -508,6 +547,12 @@ service secure_storage /system/bin/secure_storage_daemon
     group system
     disabled
 
+# SENSOR FRAMEWORK : starts fingerprintService
+service vcsFPService /system/bin/vcsFPService
+    class late_start
+    user system
+    group system
+
 on property:ro.securestorage.support=true
     mkdir /dev/.secure_storage
     chmod 0711 /dev/.secure_storage
@@ -522,24 +567,25 @@ service cs_service /system/bin/cs
     group system
     disabled
 
+service TvoutService_C /system/bin/bintvoutservice
+     class main
+     user system
+     group graphics
+on property:ro.SecEDS.enable=false
+    stop TvoutService_C
+
 on property:sys.mobicoredaemon.enable=true
     start cs_service
 
-# umount service
-service umount_service /system/bin/umount /preload
-    disabled
-    oneshot
-    
-# Support Preload install apks
-on property:persist.sys.storage_preload=1
-    mount ext4 /dev/block/mmcblk0p20 /preload nosuid nodev ro barrier=1
-    setprop storage.preload.complete 1
-
-on property:persist.sys.storage_preload=0
-    start umount_service
-
+# SSWAP
 service swapon /sbin/sswap -s
     class core
     user root
     group root
+    seclabel u:r:sswap:s0
     oneshot
+
+# IR LED
+on property:sys.boot_completed=1
+    chown system radio /sys/class/sec/sec_ir/ir_send
+    chown system radio /sys/class/sec/sec_ir/ir_send_result
