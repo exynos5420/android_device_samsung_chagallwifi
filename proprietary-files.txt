@@ -138,14 +138,21 @@ lib/hw/sensors.universal5420.so
 
 # Wifi
 etc/wifi/bcmdhd_apsta.bin
-etc/wifi/bcmdhd_mfg.bin
-etc/wifi/bcmdhd_sta.bin
+etc/wifi/bcmdhd_apsta.bin_a0
 etc/wifi/bcmdhd_ibss.bin
+etc/wifi/bcmdhd_ibss.bin_a0
+etc/wifi/bcmdhd_mfg.bin
+etc/wifi/bcmdhd_mfg.bin_a0
+etc/wifi/bcmdhd_sta.bin
+etc/wifi/bcmdhd_sta.bin_a0
+etc/wifi/bcmdhd_sta_tput.bin
+etc/wifi/bcmdhd_sta_tput.bin_a0
 etc/wifi/cred.conf
 etc/wifi/nvram_mfg.txt_4354_a0
 etc/wifi/nvram_mfg.txt_4354_a1
 etc/wifi/nvram_net.txt_4354_a0
 etc/wifi/nvram_net.txt_4354_a1
+etc/wifi/olsrd.conf
 
 # Input
 usr/idc/Synaptics_HID_TouchPad.idc
