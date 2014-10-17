@@ -153,6 +153,14 @@ etc/wifi/nvram_net.txt_4354_a0
 etc/wifi/nvram_net.txt_4354_a1
 etc/wifi/nvram_net.txt
 etc/wifi/olsrd.conf
+etc/wifi/bcmdhd_apsta.bin_4354_a0
+etc/wifi/bcmdhd_apsta.bin_4354_a1
+etc/wifi/bcmdhd_ibss.bin_4354_a0
+etc/wifi/bcmdhd_ibss.bin_4354_a1
+etc/wifi/bcmdhd_mfg.bin_4354_a0
+etc/wifi/bcmdhd_mfg.bin_4354_a1
+etc/wifi/bcmdhd_sta.bin_4354_a0
+etc/wifi/bcmdhd_sta.bin_4354_a1
 
 # Input
 usr/idc/Synaptics_HID_TouchPad.idc
