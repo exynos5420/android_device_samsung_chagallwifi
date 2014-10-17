@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2011, The Android Open Source Project
+** Copyright 2011, The CyanogenMod Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -17,11 +17,7 @@
 */
 -->
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
 <resources>
-
-    <!-- Hide this setting because we are forcing it to be enabled in build.prop -->
-    <bool name="config_enableLockScreenRotation">false</bool>
-
+    <!-- Use ZSL mode for Qualcomm cameras -->
+    <bool name="enableZSL">true</bool>
 </resources>
