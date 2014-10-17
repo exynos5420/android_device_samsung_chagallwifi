@@ -176,3 +176,4 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalv
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/samsung/chagallwifi/chagallwifi-vendor.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
