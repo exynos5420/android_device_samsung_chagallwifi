@@ -52,10 +52,10 @@ COMMON_GLOBAL_CFLAGS += -DSAMSUNG_DVFS
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-#TARGET_KERNEL_CONFIG := cyanogenmod_chagallwifi_defconfig
-#TARGET_KERNEL_SOURCE := kernel/samsung/chagallwifi
+TARGET_KERNEL_CONFIG := cyanogenmod_chagallwifi_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/chagallwifi
 
-TARGET_PREBUILT_KERNEL := device/samsung/chagallwifi/kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/chagallwifi/kernel
 
 # Battery
 BOARD_BATTERY_DEVICE_NAME := battery
