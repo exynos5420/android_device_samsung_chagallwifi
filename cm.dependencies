@@ -1,7 +1,7 @@
 [
     {
-        "repository": "android_kernel_samsung_exynos5420",
-        "target_path": "kernel/samsung/exynos5420"
+        "repository": "android_kernel_samsung_chagallwifi",
+        "target_path": "kernel/samsung/chagallwifi"
     },
     {
         "repository": "android_packages_apps_SamsungServiceMode",
