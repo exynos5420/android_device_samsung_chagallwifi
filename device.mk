@@ -68,8 +68,8 @@ PRODUCT_PACKAGES += \
     consumerir.universal5420
 
 # Keylayouts
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/Generic.kl:system/usr/keylayout/Generic.kl
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
 
 # Keystore
 PRODUCT_PACKAGES += \
