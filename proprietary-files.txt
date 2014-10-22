@@ -165,3 +165,6 @@ etc/wifi/bcmdhd_sta.bin_4354_a1
 # Input
 usr/idc/Synaptics_HID_TouchPad.idc
 usr/keylayout/gpio-keys.kl
+
+# swapping the sammy way
+/sbin/sswap
