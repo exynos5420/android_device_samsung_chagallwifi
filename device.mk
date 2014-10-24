@@ -176,7 +176,7 @@ PRODUCT_PACKAGES += \
     macloader
     
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.carrier=wifi-only
+    ro.carrier=wifi-only
 
 # CPU producer to CPU consumer not supported 
 PRODUCT_PROPERTY_OVERRIDES += \
