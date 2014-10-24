@@ -58,7 +58,7 @@ vendor/lib/mediadrm/libwvdrmengine.so
 #lib/omx/libOMX.Exynos.MPEG4.Decoder.so
 #lib/omx/libOMX.Exynos.MPEG4.Encoder.so
 #lib/omx/libOMX.Exynos.VP8.Decoder.so
-#lib/omx/libOMX.Exynos.VP8.Encoder.so
+lib/omx/libOMX.Exynos.VP8.Encoder.so
 
 # Graphics
 vendor/lib/egl/libGLES_mali.so
@@ -74,29 +74,19 @@ lib/hw/gps.default.so
 # LPM
 bin/lpm
 lib/libQmageDecoder.so
-#media/battery_batteryerror.qmg
-#media/battery_charging_5.qmg
-#media/battery_charging_10.qmg
-#media/battery_charging_15.qmg
-#media/battery_charging_20.qmg
-#media/battery_charging_25.qmg
-#media/battery_charging_30.qmg
-#media/battery_charging_35.qmg
-#media/battery_charging_40.qmg
-#media/battery_charging_45.qmg
-#media/battery_charging_50.qmg
-#media/battery_charging_55.qmg
-#media/battery_charging_60.qmg
-#media/battery_charging_65.qmg
-#media/battery_charging_70.qmg
-#media/battery_charging_75.qmg
-#media/battery_charging_80.qmg
-#media/battery_charging_85.qmg
-#media/battery_charging_90.qmg
-#media/battery_charging_95.qmg
-#media/battery_charging_100.qmg
-#media/battery_error.qmg
-#media/chargingwarning.qmg
+lib/libmaet.so
+lib/libsxqk_skia.so
+media/battery_cover.spi
+media/battery_error.spi
+media/battery_low.spi
+media/battery_temperature_error.spi
+media/battery_temperature_limit.spi
+media/dock_error.spi
+media/incompatible_charger.spi
+media/percentage.spi
+media/wave_loop.spi
+media/wireless_left.spi
+media/wireless_right.spi
 
 # Media
 vendor/firmware/fimc_is_fw2_IMX134_EEPROM.bin
