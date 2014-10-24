@@ -58,7 +58,7 @@ vendor/lib/mediadrm/libwvdrmengine.so
 #lib/omx/libOMX.Exynos.MPEG4.Decoder.so
 #lib/omx/libOMX.Exynos.MPEG4.Encoder.so
 #lib/omx/libOMX.Exynos.VP8.Decoder.so
-lib/omx/libOMX.Exynos.VP8.Encoder.so
+#lib/omx/libOMX.Exynos.VP8.Encoder.so
 
 # Graphics
 vendor/lib/egl/libGLES_mali.so
