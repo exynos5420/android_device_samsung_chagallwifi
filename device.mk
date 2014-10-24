@@ -105,7 +105,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcsc \
     libOMX.Exynos.MP3.Decoder \
-    libOMX.Exynos.VP8.Decoder 
+    libOMX.Exynos.VP8.Encoder 
 
 # Permissions
 PRODUCT_COPY_FILES += \
