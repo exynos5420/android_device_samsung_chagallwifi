@@ -83,6 +83,7 @@ media/battery_temperature_error.spi
 media/battery_temperature_limit.spi
 media/dock_error.spi
 media/incompatible_charger.spi
+media/lcd_density.txt
 media/percentage.spi
 media/wave_loop.spi
 media/wireless_left.spi
