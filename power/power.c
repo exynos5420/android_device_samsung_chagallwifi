@@ -41,6 +41,7 @@ static int write_int(char const *path, int value)
         char buffer[20];
         int bytes = sprintf(buffer, "%d\n", value);
 //        ALOGE("write_int before write: path %s, value %s", path, buffer);
+        int amt = write(fd, buffer, bytes);
         close(fd);
         return amt == -1 ? -errno : 0;
     } else {
