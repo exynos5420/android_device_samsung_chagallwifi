@@ -145,9 +145,9 @@ on boot
 
 # Permissions for TouchScreen
     chown system radio /sys/class/sec/tsp/cmd
-    chown system system /sys/class/input/input1/enabled
-    chmod 0660 /sys/class/input/input1/enabled
-	chown system radio /sys/class/sec/sec_touchscreen/set_tsp_for_inputmethod
+    chown system system /sys/class/input/input8/enabled
+    chmod 0660 /sys/class/input/input8/enabled
+    chown system radio /sys/class/sec/sec_touchscreen/set_tsp_for_inputmethod
 
 # Permissions for Touchkey
     chown system radio /sys/class/sec/sec_touchkey/enable_disable

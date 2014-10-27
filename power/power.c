@@ -25,7 +25,7 @@
 #include <hardware/hardware.h>
 #include <hardware/power.h>
 
-#define TSP_POWER "/sys/class/input/input1/enabled"
+#define TSP_POWER "/sys/class/input/input8/enabled"
 
 static void sysfs_write(char *path, char *s) {
     char buf[80];
