@@ -29,7 +29,7 @@ import org.cyanogenmod.hardware.util.FileUtils;
 
 public class KeyDisabler {
 
-    private static String CONTROL_PATH = "/sys/class/sec/sec_touchkey/tsp_keys_enabled";
+    private static String CONTROL_PATH = "/sys/class/input/input8/enabled";
 
     public static boolean isSupported() { return true; }
 
