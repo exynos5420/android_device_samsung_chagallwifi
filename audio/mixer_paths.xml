@@ -15,14 +15,14 @@ INPUT_CHANNEL_MAP {
   <ctl name="Back Mic", "Right" />
   <ctl name="Headset In", "Left" />
   <ctl name="Third Mic", "Left" />
-  <ctl name="SCO Headset In" value="None" />
+  <ctl name="SCO Headset In", value="None" />
 }
 -->
 
   <!-- Initial mixer settings -->
 
   <!-- Noise gate control -->
-  <ctl name="Noise Gate Switch" value="0" />,
+  <ctl name="Noise Gate Switch" value="0" />
   <ctl name="HPOUT1L NG HPOUT1L Switch" value="0" />
   <ctl name="HPOUT1R NG HPOUT1R Switch" value="0" />
   <ctl name="HPOUT2L NG HPOUT2L Switch" value="0" />
