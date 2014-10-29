@@ -22,7 +22,7 @@
                          AudioDecoderCap)>
 <!ELEMENT CamcorderProfiles (EncoderProfile+, ImageEncoding+, ImageDecoding, Camera)>
 <!ELEMENT EncoderProfile (Video, Audio)>
-<!ATTLIST EncoderProfile quality (480p|qcif) #REQUIRED>
+<!ATTLIST EncoderProfile quality (480p|720p) #REQUIRED>
 <!ATTLIST EncoderProfile fileFormat (mp4|3gp) #REQUIRED>
 <!ATTLIST EncoderProfile duration (30|60) #REQUIRED>
 <!ATTLIST EncoderProfile cameraId (0|1) #REQUIRED>
@@ -128,20 +128,6 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-            <Video codec="h264"
-                   bitRate="256000"
-                   width="176"
-                   height="144"
-                   frameRate="30" />
-
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
-
-        </EncoderProfile>
-
         <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="60">
             <Video codec="h264"
                    bitRate="3000000"
@@ -184,19 +170,6 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
-            <Video codec="h264"
-                   bitRate="256000"
-                   width="176"
-                   height="144"
-                   frameRate="30" />
-            <!-- Audio settings are not used for timealpse video recording -->
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
-        </EncoderProfile>
-
         <ImageEncoding quality="90" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
@@ -232,18 +205,6 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-            <Video codec="h264"
-                   bitRate="256000"
-                   width="176"
-                   height="144"
-                   frameRate="30" />
-
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
-
         </EncoderProfile>
 
         <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="60">
@@ -271,19 +232,6 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="16000"
-                   channels="1" />
-        </EncoderProfile>
-
-        <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
-            <Video codec="h264"
-                   bitRate="256000"
-                   width="176"
-                   height="144"
-                   frameRate="30" />
-            <!-- Audio settings are not used for timealpse video recording -->
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
                    channels="1" />
         </EncoderProfile>
 
