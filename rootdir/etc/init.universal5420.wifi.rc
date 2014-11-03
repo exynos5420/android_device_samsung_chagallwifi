@@ -1,17 +1,4 @@
 # Wi-Fi init file
-    #create symlinks for identical files (like in sammy factory rom)
-    symlink /system/etc/wifi/bcmdhd_apsta.bin_a0 /system/etc/wifibcmdhd_apsta.bin_4354_a0
-    symlink /system/etc/wifi/bcmdhd_apsta.bin /system/etc/wifibcmdhd_apsta.bin_4354_a1
-    symlink /system/etc/wifi/bcmdhd_ibss.bin_a0 /system/etc/wifibcmdhd_ibss.bin_4354_a0
-    symlink /system/etc/wifi/bcmdhd_ibss.bin /system/etc/wifibcmdhd_ibss.bin_4354_a1
-    symlink /system/etc/wifi/bcmdhd_mfg.bin_a0 /system/etc/wifibcmdhd_mfg.bin_4354_a0
-    symlink /system/etc/wifi/bcmdhd_mfg.bin /system/etc/wifibcmdhd_mfg.bin_4354_a1
-    symlink /system/etc/wifi/bcmdhd_sta.bin_a0 /system/etc/wifibcmdhd_sta.bin_4354_a0
-    symlink /system/etc/wifi/bcmdhd_sta.bin /system/etc/wifibcmdhd_sta.bin_4354_a1
-    symlink /system/etc/wifi/nvram_mfg.txt /system/etc/wifinvram_mfg.txt_4354_a0
-    symlink /system/etc/wifi/nvram_mfg.txt /system/etc/wifinvram_mfg.txt_4354_a1
-    symlink /system/etc/wifi/nvram_net.txt /system/etc/wifinvram_net.txt_4354_a0
-    symlink /system/etc/wifi/nvram_net.txt /system/etc/wifinvram_net.txt_4354_a1
 
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
