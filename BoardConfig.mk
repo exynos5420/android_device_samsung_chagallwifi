@@ -30,6 +30,9 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a15
 
+# Enable QC's libm optimizations
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
 # Audio
 BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
 
