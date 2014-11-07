@@ -144,27 +144,38 @@ on boot
     mkdir /dev/socket/cs_socket 0770 system system
 
 # Permissions for TouchScreen
-    chown system radio /sys/class/sec/tsp/cmd
-    chown system system /sys/class/input/input8/enabled
     chmod 0660 /sys/class/input/input8/enabled
-    chown system radio /sys/class/sec/sec_touchscreen/set_tsp_for_inputmethod
+    chmod 0660 /sys/class/sec/tsp/cmd
+    chmod 0660 /sys/class/sec/tsp/cmd_result
+    chmod 0660 /sys/class/sec/tsp/cmd_list
+    chown system radio /sys/class/sec/tsp/cmd
+    chown system radio /sys/class/sec/tsp/cmd_result
+    chown system radio /sys/class/sec/tsp/cmd_list
+    chown system radio /sys/class/input/input8/enabled
 
 # Permissions for Touchkey
-    chown system radio /sys/class/sec/sec_touchkey/enable_disable
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_brightness
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_menu
+    chown system radio /sys/devices/virtual/sec/sec_touchkey/brightness
+    chown system radio /sys/class/sec/sec_touchkey/brightness
+    chown system radio /sys/class/sec/sec_touchkey/glove_mode
+    chown system radio /sys/class/sec/sec_touchkey/modecheck
     chown system radio /sys/class/sec/sec_touchkey/touchkey_back
-    chown system radio /sys/class/sec/sec_touchkey/touch_update
-    chown system radio /sys/class/sec/sec_touchkey/touch_version
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_back_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_back_raw_ref
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_back_ref
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_back
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_back_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_menu
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_d_menu_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_factory_mode
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
     chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
     chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
-    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent_raw
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent_raw_ref
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent_ref
     chown system radio /sys/class/sec/sec_touchkey/touchkey_threshold
-    chown system system /sys/devices/virtual/sec/sec_touchkey/brightness
-    chown system radio /sys/class/sec/sec_touchkey/extra_button_event
-#    chown root system /sys/class/sec/sec_touchkey/tsp_keys_enabled
 
 # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
