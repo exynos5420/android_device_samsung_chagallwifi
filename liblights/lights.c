@@ -16,7 +16,7 @@
  */
 
 //#define LOG_NDEBUG 0
-#define LOG_TAG "lights"
+#define LOG_TAG "LibLightsHAL"
 #include <cutils/log.h>
 #include <stdlib.h>
 #include <string.h>
@@ -46,7 +46,7 @@ static int write_int(char const *path, int value)
 
     already_warned = 0;
 
-    ALOGV("write_int: path %s, value %d", path, value);
+    ALOGE("write_int: path %s, value %d", path, value);
     fd = open(path, O_RDWR);
 
     if (fd >= 0) {
@@ -107,7 +107,7 @@ set_light_buttons(struct light_device_t* dev,
 
 static int close_lights(struct light_device_t *dev)
 {
-    ALOGV("close_light is called");
+    ALOGE("close_light is called");
     if (dev)
         free(dev);
 

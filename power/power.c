@@ -34,13 +34,13 @@ static int write_int(char const *path, int value)
 
     already_warned = 0;
 
-//    ALOGE("write_int called: path %s, value %d", path, value);
+    ALOGE("write_int called: path %s, value %d", path, value);
     fd = open(path, O_RDWR);
 
     if (fd >= 0) {
         char buffer[20];
         int bytes = sprintf(buffer, "%d\n", value);
-//        ALOGE("write_int before write: path %s, value %s", path, buffer);
+        ALOGE("write_int before write: path %s, value %s", path, buffer);
         int amt = write(fd, buffer, bytes);
         close(fd);
         return amt == -1 ? -errno : 0;
@@ -59,7 +59,7 @@ static void power_init(struct power_module *module)
 
 static void power_set_interactive(struct power_module *module, int on)
 {
-//    ALOGE("power_set_interactive called: value: %d,", on);
+    ALOGE("power_set_interactive called: value: %d,", on);
     write_int(TSP_POWER, on?1:0);
 }
 
