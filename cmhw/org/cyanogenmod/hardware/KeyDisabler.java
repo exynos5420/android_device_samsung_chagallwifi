@@ -18,6 +18,9 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
+import android.util.Log;
+import java.io.File;
+
 /*
  * Disable capacitive keys
  *
@@ -29,16 +32,28 @@ import org.cyanogenmod.hardware.util.FileUtils;
 
 public class KeyDisabler {
 
+    private static String TAG = "KeyDisabler";
+
     private static String CONTROL_PATH = "/sys/class/input/input8/enabled";
 
-    public static boolean isSupported() { return true; }
+    public static boolean isSupported() {
+         File f = new File(CONTROL_PATH);
+	 return f.exists();
+    }
 
     public static boolean isActive() {
-        return (FileUtils.readOneLine(CONTROL_PATH).equals("0"));
+	int i;
+        i = Integer.parseInt(FileUtils.readOneLine(CONTROL_PATH));
+        Log.v(TAG, "checking if active: " + i);
+        return i > 0 ? false : true;
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
+        boolean ant = false;
+        Log.v(TAG, "setting to " + state);
+        ant = FileUtils.writeLine(CONTROL_PATH, String.valueOf(state ? 0 : 1));
+        Log.v(TAG, "state is " + ant);
+	return ant;
     }
 
 }
