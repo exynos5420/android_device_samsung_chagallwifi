@@ -39,6 +39,7 @@ public class HighTouchSensitivity {
     private static String GLOVE_MODE_ENABLE = GLOVE_MODE + ",1";
     private static String GLOVE_MODE_DISABLE = GLOVE_MODE + ",0";
     private static String STATUS_OK = ":OK";
+    private static String TOUCHKEY_GLOVEMODE_PATH = "/sys/devices/virtual/sec/sec_touchkey/glove_mode";
     private static Object lock;
 
     /**
@@ -86,6 +87,21 @@ public class HighTouchSensitivity {
        mode is enabled, so we'll let Settings.apk keep track of the state
        (kernel boots with glove mode disabled) */
 
+    /**
+     * This method return the current activation status of high touch sensitivity
+     *
+     * @return boolean Must be false if high touch sensitivity is not supported or not activated,
+     * or the operation failed while reading the status; true in any other case.
+     */
+    public static boolean isEnabled() {
+        if (FileUtils.readOneLine(TOUCHKEY_GLOVEMODE_PATH).equals("1")) {
+            Log.v(TAG, TOUCHKEY_GLOVEMODE_PATH + ": is enabled.");
+	    return true;
+	}
+        Log.v(TAG, "Reading " + TOUCHKEY_GLOVEMODE_PATH + " failed or is disabled");
+        return false;
+    }
+
     /* Synchronized because the result needs to be checked (not sure if anything
      * else writes to that sysfs command path though...) */
     private static synchronized boolean setAndCheckResult(String command) {
@@ -111,9 +127,19 @@ public class HighTouchSensitivity {
      */
     public static boolean setEnabled(boolean status) {
         if (status == true) {
-            return setAndCheckResult(GLOVE_MODE_ENABLE);
+            if (FileUtils.writeLine(TOUCHKEY_GLOVEMODE_PATH, "1")) {
+                return setAndCheckResult(GLOVE_MODE_ENABLE);
+	    } else {
+                Log.e(TAG, "Setting " + TOUCHKEY_GLOVEMODE_PATH + " to 1 failed");
+		return  false;
+	    }
         } else {
-            return setAndCheckResult(GLOVE_MODE_DISABLE);
+            if (FileUtils.writeLine(TOUCHKEY_GLOVEMODE_PATH, "0")) {
+                return setAndCheckResult(GLOVE_MODE_DISABLE);
+	    } else {
+                Log.e(TAG, "Setting " + TOUCHKEY_GLOVEMODE_PATH + " to 0 failed");
+		return  false;
+	    }
         }
     }
 }
