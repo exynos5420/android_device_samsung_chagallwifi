@@ -384,6 +384,7 @@ on fs
 
 # Permissions for LCD
     chown system radio /sys/class/lcd/panel/lcd_type
+    chown system radio /sys/class/lcd/panel/power_reduce
 
 # Permissions for MDNIE
     chown system media_rw /sys/class/mdnie/mdnie/mode
