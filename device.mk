@@ -178,4 +178,3 @@ $(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/samsung/chagallwifi/chagallwifi-vendor.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
