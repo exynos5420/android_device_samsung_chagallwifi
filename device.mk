@@ -60,6 +60,7 @@ PRODUCT_PACKAGES += \
 # HW composer
 PRODUCT_PACKAGES += \
     libion \
+    hwcomposer.exynos5 \
     gralloc.exynos5
 
 # IR
@@ -104,8 +105,9 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libcsc \
+    libExynosOMX_Core \
     libOMX.Exynos.MP3.Decoder \
-    libOMX.Exynos.VP8.Encoder 
+    libstagefrighthw
 
 # Permissions
 PRODUCT_COPY_FILES += \
