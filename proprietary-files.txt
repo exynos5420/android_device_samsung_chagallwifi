@@ -65,9 +65,6 @@ vendor/lib/egl/libGLES_mali.so
 vendor/lib/libmalicore.bc
 vendor/lib/libRSDriverArm.so
 
-#Power
-vendor/lib/hw/power.exynos5.so
-
 # GPS
 bin/gpsd
 etc/gps.conf
