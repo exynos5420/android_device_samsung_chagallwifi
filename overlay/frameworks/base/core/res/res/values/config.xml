@@ -21,6 +21,10 @@
      for different hardware and product builds. -->
 <resources>
 
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">false</bool>
+
     <bool name="config_deskDockEnablesAccelerometer">false</bool>
 
     <!-- Default color for notification LED is white. -->
