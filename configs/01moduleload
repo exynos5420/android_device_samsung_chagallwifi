@@ -6,7 +6,7 @@
 
 MODLIST="cifs f2fs fat msdos ntfs vfat"
 
-MODPROBE="/ssstem/xbin/modprobe -v"
+MODPROBE="/system/xbin/modprobe -v"
 
 for mod in $MODLIST; do
     $MODPROBE $mod
