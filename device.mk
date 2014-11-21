@@ -85,6 +85,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
+# simple kernel module load script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/01moduleload:system/etc/init.d/01moduleload
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
