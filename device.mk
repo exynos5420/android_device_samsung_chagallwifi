@@ -89,6 +89,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/01moduleload:system/etc/init.d/01moduleload
 
+# simple script for system tuning
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/10systemtuning:system/etc/init.d/10systemtuning
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory

@@ -1,0 +1,20 @@
+#!/system/bin/sh
+#
+# should be self-explaining:
+# this is the file you put your tunings to
+# file in /sys (sysfs) and /proc (procfs)
+
+# set governor
+# echo ondemand >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+# set multicore power savings
+# 0 = disabled
+# 1 = enabled
+# 2 = aggressive
+# echo 2 >/sys/devices/system/cpu/sched_mc_power_savings
+
+# set sceduler
+# mmc0 for internal sdcard
+# mmc2 for external sdcard
+# echo bfq >/sys/devices/platform/dw_mmc.0/mmc_host/mmc0/mmc0\:0001/block/mmcblk0/queue/scheduler
+# echo bfq >/sys/devices/platform/dw_mmc.2/mmc_host/mmc2/mmc2\:0001/block/mmcblk1/queue/scheduler
