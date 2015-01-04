@@ -22,8 +22,8 @@ PRODUCT_CHARACTERISTICS := tablet
 DEVICE_PACKAGE_OVERLAYS += device/samsung/chagallwifi/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi xxhdpi
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_CONFIG := normal xlarge hdpi xhdpi xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
