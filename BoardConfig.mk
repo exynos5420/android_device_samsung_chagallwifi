@@ -136,8 +136,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_USES_SCALER := true
 
 # SELinux
-<<<<<<< HEAD
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
 	device/samsung/chagallwifi/sepolicy
 
 BOARD_SEPOLICY_UNION += \
