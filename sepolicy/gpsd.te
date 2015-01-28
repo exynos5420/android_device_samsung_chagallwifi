@@ -2,3 +2,4 @@
 # /data/.gps.interface.pipe.to_jni, /data/.gpsd.lock,
 # and /data/gldata.sto
 file_type_auto_trans(gpsd, system_data_file, gps_data_file);
+allow gpsd gps_data_file:file { open read write create unlink };
