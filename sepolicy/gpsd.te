@@ -1,5 +1,4 @@
-# gpsd on manta uses /data/.gps.interface.pipe.to_gpsd,
-# /data/.gps.interface.pipe.to_jni, /data/.gpsd.lock,
-# and /data/gldata.sto
+# gpsd on chagallwifi uses /data/system/gps
+# and contained files
 file_type_auto_trans(gpsd, system_data_file, gps_data_file);
-allow gpsd gps_data_file:file { open read write create unlink };
+allow gpsd sysfs_wake_lock:file rw_file_perms;
