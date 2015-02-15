@@ -28,3 +28,11 @@ echo 200000 >/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 # mmc2 for external sdcard
 # echo bfq >/sys/devices/platform/dw_mmc.0/mmc_host/mmc0/mmc0\:0001/block/mmcblk0/queue/scheduler
 # echo bfq >/sys/devices/platform/dw_mmc.2/mmc_host/mmc2/mmc2\:0001/block/mmcblk1/queue/scheduler
+
+# set mDNIe colour mode
+# 0 = Standard
+# 1 = Dynamic
+# 2 = Movie (note: this is the only non-saturated mode)
+# 3 = Natural
+# 4 = Auto (note: this is the rom standard)
+# echo 2 >/sys/devices/platform/s5p-mipi-dsim.1/lcd/panel/mdnie/mode
