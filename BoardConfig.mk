@@ -60,7 +60,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/chagallwifi
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 #TARGET_PREBUILT_KERNEL := device/samsung/chagallwifi/kernel
 
-# Battery
+# Charging mode
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := battery
 
 # Bootloader

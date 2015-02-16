@@ -154,7 +154,6 @@ PRODUCT_PACKAGES += \
     init.universal5420.rc \
     init.universal5420.usb.rc \
     init.universal5420.wifi.rc \
-    lpm.rc \
     ueventd.universal5420.rc \
     init.nvertigo.rc
 
@@ -192,7 +191,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnetcmdiface \
     macloader
-    
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=wifi-only
 

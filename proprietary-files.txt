@@ -71,24 +71,6 @@ etc/gps.conf
 etc/gps.xml
 lib/hw/gps.default.so
 
-# LPM
-bin/lpm
-lib/libQmageDecoder.so
-lib/libmaet.so
-lib/libsxqk_skia.so
-media/battery_cover.spi
-media/battery_error.spi
-media/battery_low.spi
-media/battery_temperature_error.spi
-media/battery_temperature_limit.spi
-media/dock_error.spi
-media/incompatible_charger.spi
-media/lcd_density.txt
-media/percentage.spi
-media/wave_loop.spi
-media/wireless_left.spi
-media/wireless_right.spi
-
 # Media
 vendor/firmware/fimc_is_fw2_IMX134_EEPROM.bin
 vendor/firmware/mfc_fw.bin
