@@ -514,7 +514,6 @@ on charger
 service sec-playlpm /system/bin/lpm
     class sec-charger
     critical
-    seclabel u:r:healthd:s0
 
 # service for TZPR provisioning version check app
 service scranton_RD /system/bin/scranton_RD
