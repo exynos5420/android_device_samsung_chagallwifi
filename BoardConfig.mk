@@ -33,6 +33,9 @@ TARGET_CPU_VARIANT := cortex-a15
 # Enable QC's libm optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
+
 # Audio
 BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
 
