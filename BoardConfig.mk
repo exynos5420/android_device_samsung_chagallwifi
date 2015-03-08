@@ -151,6 +151,7 @@ BOARD_SEPOLICY_UNION += \
 	file.te \
 	gpsd.te \
 	init.te \
+	kernel.te \
 	mediaserver.te \
 	servicemanager.te \
 	system_app.te \
