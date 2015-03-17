@@ -154,6 +154,8 @@ BOARD_SEPOLICY_UNION += \
 	kernel.te \
 	mediaserver.te \
 	servicemanager.te \
+	shell.te \
+	sysinit.te \
 	system_app.te \
 	system_server.te \
 	vold.te \
