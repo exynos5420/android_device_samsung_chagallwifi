@@ -1,7 +1,0 @@
-service supolicy /system/xbin/supolicy --live \
-    "allow shell device:chr_file { read write getattr ioctl }"
-    disabled
-    oneshot
-
-on post-fs-data
-    start supolicy

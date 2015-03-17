@@ -9,8 +9,6 @@ import /init.usb.rc
 import /init.${ro.hardware}.rc
 import /init.${ro.zygote}.rc
 import /init.trace.rc
-# Nvertigo's extra init file to get init.d support - mandatory: use of chainfires SuperSU
-import /init.nvertigo.rc
 # Include CM's extra init file
 import /init.cm.rc
 
