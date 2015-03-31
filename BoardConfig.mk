@@ -154,6 +154,7 @@ BOARD_SEPOLICY_UNION += \
 	init.te \
 	kernel.te \
 	mediaserver.te \
+	service_contexts \
 	servicemanager.te \
 	shell.te \
 	sysinit.te \
