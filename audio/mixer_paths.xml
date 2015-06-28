@@ -210,6 +210,10 @@ INPUT_CHANNEL_MAP {
 
   <path name="speaker">
     <ctl name="SPK Switch" value="1" />
+    <ctl name="Speaker Digital Volume" value="125" />
+    <ctl name="SPKOUTL Input 1 Volume" value="45" />
+    <ctl name="SPKOUTR Input 1 Volume" value="45" />
+
   </path>
 
   <path name="earpiece">
