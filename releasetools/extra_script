@@ -1,0 +1,14 @@
+ui_print("");
+ui_print("Making symlinks for Sammys wifi driver mimik and for libOpenCL.so.1.1");
+ui_print("");
+mount("ext4", "EMMC", "/dev/block/platform/dw_mmc.0/by-name/SYSTEM", "/system", "");
+symlink("/system/etc/wifi/bcmdhd_apsta.bin", "/system/etc/wifi/bcmdhd_apsta.bin_4354_a1");
+symlink("/system/etc/wifi/bcmdhd_apsta.bin_a0", "/system/etc/wifi/bcmdhd_apsta.bin_4354_a0");
+symlink("/system/etc/wifi/bcmdhd_ibss.bin", "/system/etc/wifi/bcmdhd_ibss.bin_4354_a1");
+symlink("/system/etc/wifi/bcmdhd_ibss.bin_a0", "/system/etc/wifi/bcmdhd_ibss.bin_4354_a0");
+symlink("/system/etc/wifi/bcmdhd_mfg.bin", "/system/etc/wifi/bcmdhd_mfg.bin_4354_a1");
+symlink("/system/etc/wifi/bcmdhd_mfg.bin_a0", "/system/etc/wifi/bcmdhd_mfg.bin_4354_a0");
+symlink("/system/etc/wifi/bcmdhd_sta.bin", "/system/etc/wifi/bcmdhd_sta.bin_4354_a1");
+symlink("/system/etc/wifi/bcmdhd_sta.bin_a0", "/system/etc/wifi/bcmdhd_sta.bin_4354_a0");
+symlink("/vendor/lib/egl/libGLES_mali.so", "/system/vendor/lib/libOpenCL.so.1.1");
+unmount("/system");
