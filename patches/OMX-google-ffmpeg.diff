@@ -1,20 +1,20 @@
 
 project frameworks/av/
-diff --git a/frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml b/frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml
-index bdc019e..5e4dc00 100644
---- a/frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml
-+++ b/frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml
-@@ -34,5 +34,6 @@
-         <MediaCodec name="OMX.ffmpeg.rv.decoder"     type="video/vnd.rn-realvideo"/>
+diff --git a/media/libstagefright/data/media_codecs_ffmpeg.xml b/media/libstagefright/data/media_codecs_ffmpeg.xml
+index 03c727e..74627ce 100644
+--- a/media/libstagefright/data/media_codecs_ffmpeg.xml
++++ b/media/libstagefright/data/media_codecs_ffmpeg.xml
+@@ -35,5 +35,6 @@
          <MediaCodec name="OMX.ffmpeg.flv1.decoder"   type="video/x-flv"/>
+         <MediaCodec name="OMX.ffmpeg.vc1.decoder"    type="video/vc1" />
          <MediaCodec name="OMX.ffmpeg.vtrial.decoder" type="video/ffmpeg" />
 +        <MediaCodec name="OMX.ffmpeg.h264.decoder"   type="video/avc" />
      </Decoders>
  </Included>
-diff --git a/frameworks/av/media/libstagefright/data/media_codecs_google_video.xml b/frameworks/av/media/libstagefright/data/media_codecs_google_video.xml
-index bcdabb4..a7b1b28 100644
---- a/frameworks/av/media/libstagefright/data/media_codecs_google_video.xml
-+++ b/frameworks/av/media/libstagefright/data/media_codecs_google_video.xml
+diff --git a/media/libstagefright/data/media_codecs_google_video.xml b/media/libstagefright/data/media_codecs_google_video.xml
+index 4e7cf49..a1b2f52 100644
+--- a/media/libstagefright/data/media_codecs_google_video.xml
++++ b/media/libstagefright/data/media_codecs_google_video.xml
 @@ -40,15 +40,6 @@
              <Limit name="bitrate" range="1-384000" />
              <Feature name="adaptive-playback" />
