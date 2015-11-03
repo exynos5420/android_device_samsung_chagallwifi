@@ -1,10 +1,10 @@
 
 project external/stagefright-plugins/
 diff --git a/external/stagefright-plugins/data/media_codecs_ffmpeg.xml b/external/stagefright-plugins/data/media_codecs_ffmpeg.xml
-index 3859337..4e445d4 100644
+index c243ea4..435d4cb 100644
 --- a/external/stagefright-plugins/data/media_codecs_ffmpeg.xml
 +++ b/external/stagefright-plugins/data/media_codecs_ffmpeg.xml
-@@ -96,5 +96,10 @@
+@@ -98,5 +98,10 @@
              <Limit name="alignment" value="2x2" />
              <Feature name="adaptive-playback" />
          </MediaCodec>
