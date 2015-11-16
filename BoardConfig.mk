@@ -166,6 +166,7 @@ BOARD_SEPOLICY_UNION += \
 	sysinit.te \
 	system_app.te \
 	system_server.te \
+	sswap.te \
 	vold.te \
 	wpa.te
 
