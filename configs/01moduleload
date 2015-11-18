@@ -2,12 +2,13 @@
 #
 # simply include module to MODLIST; i.e. if you
 # you have in /system/lib/modules a file xpad.ko
-# append at end of list
+# append at end of list and uncomment the following
+# lines:
 
-MODLIST="cifs fat msdos ntfs vfat"
+#MODLIST="cifs fat msdos ntfs vfat"
 
-MODPROBE="/system/xbin/modprobe -v"
+#MODPROBE="/system/xbin/modprobe -v"
 
-for mod in $MODLIST; do
-    $MODPROBE $mod
-done
+#for mod in $MODLIST; do
+#    $MODPROBE $mod
+#done
