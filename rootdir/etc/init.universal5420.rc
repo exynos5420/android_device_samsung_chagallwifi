@@ -153,6 +153,10 @@ on boot
     chown system radio /sys/class/sec/tsp/cmd_result
     chown system radio /sys/class/sec/tsp/cmd_list
     chown system radio /sys/class/input/input8/enabled
+    chown system system /sys/class/input/input1/enabled
+    chmod 0660 /sys/class/input/input1/enabled
+    chown system radio /sys/class/input/input1/wake_gesture
+    chmod 0660 /sys/class/input/input1/wake_gesture
 
 # Permissions for Touchkey
     chown system radio /sys/devices/virtual/sec/sec_touchkey/brightness
