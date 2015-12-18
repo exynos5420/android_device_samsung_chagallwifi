@@ -161,6 +161,7 @@ BOARD_SEPOLICY_UNION += \
 	kernel.te \
 	macloader.te \
 	mediaserver.te \
+	netd.te \
 	service_contexts \
 	servicemanager.te \
 	shell.te \
