@@ -27,6 +27,7 @@
 
 #define TSP_POWER "/sys/class/input/input8/enabled"
 #define WAKE_GESTURE_CONTROL_PATH "/sys/class/input/input1/wake_gesture"
+#define WAKE_GESTURE_ENABLED "/data/misc/.taptowake"
 
 static int write_int(char const *path, int value)
 {
@@ -35,13 +36,11 @@ static int write_int(char const *path, int value)
 
     already_warned = 0;
 
-//    ALOGE("write_int called: path %s, value %d", path, value);
     fd = open(path, O_RDWR);
 
     if (fd >= 0) {
         char buffer[20];
         int bytes = sprintf(buffer, "%d\n", value);
-//        ALOGE("write_int before write: path %s, value %s", path, buffer);
         int amt = write(fd, buffer, bytes);
         close(fd);
         return amt == -1 ? -errno : 0;
@@ -60,11 +59,23 @@ static void power_init(struct power_module *module)
 
 static void power_set_interactive(struct power_module *module, int on)
 {
-//    ALOGE("power_set_interactive called: value: %d,", on);
-    write_int(TSP_POWER, on?1:0);
-    write_int(WAKE_GESTURE_CONTROL_PATH, on?0:1);
-}
+    FILE * pGestureEnabled;
+    int isenabled;
 
+    pGestureEnabled = fopen(WAKE_GESTURE_ENABLED, "r");
+    if ( pGestureEnabled != NULL ) {
+        fscanf(pGestureEnabled, "%d", &isenabled);
+        fclose(pGestureEnabled);
+    }
+    else {
+        ALOGE("failed to open state file");
+    }
+    if ( isenabled == 1 )
+        write_int(WAKE_GESTURE_CONTROL_PATH, on?0:1);
+
+    write_int(TSP_POWER, on?1:0);
+
+}
 static void power_hint(struct power_module *module, power_hint_t hint,
                        void *data) {
     switch (hint) {
