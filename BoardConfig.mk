@@ -93,7 +93,7 @@ BOARD_USES_HWC_SERVICES := true
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Hardware
-#BOARD_HARDWARE_CLASS += device/samsung/chagallwifi/cmhw
+BOARD_HARDWARE_CLASS += device/samsung/chagallwifi/cmhw
 
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 20
