@@ -26,6 +26,7 @@
 #include <hardware/power.h>
 
 #define TSP_POWER "/sys/class/input/input8/enabled"
+#define WAKE_GESTURE_CONTROL_PATH "/sys/class/input/input1/wake_gesture"
 
 static int write_int(char const *path, int value)
 {
@@ -61,6 +62,7 @@ static void power_set_interactive(struct power_module *module, int on)
 {
 //    ALOGE("power_set_interactive called: value: %d,", on);
     write_int(TSP_POWER, on?1:0);
+    write_int(WAKE_GESTURE_CONTROL_PATH, on?0:1);
 }
 
 static void power_hint(struct power_module *module, power_hint_t hint,
