@@ -152,30 +152,6 @@ BOARD_USES_SCALER := true
 BOARD_SEPOLICY_DIRS += \
 	device/samsung/chagallwifi/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-	file_contexts \
-	debuggerd.te \
-	device.te \
-	domain.te \
-	drmserver.te \
-	file.te \
-	gpsd.te \
-	hostapd.te \
-	init.te \
-	kernel.te \
-	macloader.te \
-	mediaserver.te \
-	netd.te \
-	service_contexts \
-	servicemanager.te \
-	shell.te \
-	sysinit.te \
-	system_app.te \
-	system_server.te \
-	sswap.te \
-	vold.te \
-	wpa.te
-
 # SurfaceFlinger
 BOARD_USES_SYNC_MODE_FOR_MEDIA := true
 
