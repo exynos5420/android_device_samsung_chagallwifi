@@ -41,4 +41,4 @@ ro.securestorage.support=true
 wifi.interface=wlan0
 
 #Adaptive Backlight
-#ro.cm.hardware.cabc=/sys/class/lcd/panel/power_reduce
+ro.cm.hardware.cabc=/sys/class/lcd/panel/power_reduce
