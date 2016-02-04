@@ -31,13 +31,10 @@ TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a15
 
 # Enable QC's libm optimizations
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+#TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
-
-# Audio
-BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -60,14 +57,13 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_CONFIG := cyanogenmod_chagallwifi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/chagallwifi
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 #TARGET_PREBUILT_KERNEL := device/samsung/chagallwifi/kernel
 
 # Charging mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-BOARD_BATTERY_DEVICE_NAME := battery
+BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := chagallwifi
@@ -82,8 +78,8 @@ BOARD_USES_FIMGAPI_V4L2 := false
 
 # Graphics
 USE_OPENGL_RENDERER := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 5
-BOARD_EGL_NEEDS_HANDLE_VALUE := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+#BOARD_EGL_NEEDS_HANDLE_VALUE := true
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 
 # Exynos display
@@ -98,8 +94,8 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 # Hardware
 BOARD_HARDWARE_CLASS += device/samsung/chagallwifi/cmhw
 
-# Init
-TARGET_NR_SVC_SUPP_GIDS := 20
+# Keymaster
+BOARD_USES_TRUST_KEYMASTER := true
 
 # Media
 COMMON_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED # use format from fw/native
@@ -108,17 +104,15 @@ COMMON_GLOBAL_CFLAGS += -DWIDEVINE_PLUGIN_PRE_NOTIFY_ERROR
 # OpenMAX Video
 BOARD_USE_STOREMETADATA := true
 BOARD_USE_METADATABUFFERTYPE := true
-BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_DMA_BUF := true
 BOARD_USE_ANB_OUTBUF_SHARE := true
-BOARD_USE_GSC_RGB_ENCODER := true
 BOARD_USE_IMPROVED_BUFFER := true
-BOARD_USE_CSC_HW := false
-BOARD_USE_H264_PREPEND_SPS_PPS := false
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_CSC_HW := true
 BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_VP8ENC_SUPPORT := true
-BOARD_USE_ENCODER_RGBINPUT_SUPPORT := true
-BOARD_USE_DUALDPB_MODE := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -138,28 +132,30 @@ BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 TARGET_POWERHAL_VARIANT := chagallwifi
 
 # Recovery
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5420
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_RECOVERY_SWIPE := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+# Samsung Gralloc
+TARGET_SAMSUNG_GRALLOC_EXTERNAL_USECASES := true
 
 # Scaler
 BOARD_USES_SCALER := true
+BOARD_USES_GSC_VIDEO := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
 	device/samsung/chagallwifi/sepolicy
 
-# SurfaceFlinger
-BOARD_USES_SYNC_MODE_FOR_MEDIA := true
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Webkit
 ENABLE_WEBGL := true
+
+# WFD
+BOARD_USES_WFD := true
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI          := true
@@ -172,6 +168,8 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA          := "/system/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/etc/wifi/bcmdhd_apsta.bin"
+WIFI_DRIVER_NVRAM_PATH_PARAM     := "/sys/module/dhd/parameters/nvram_path"
+WIFI_DRIVER_NVRAM_PATH           := "/system/etc/wifi/nvram_net.txt"
 
 # custom additions to updater-script
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagallwifi/releasetools/ota_from_target_files
