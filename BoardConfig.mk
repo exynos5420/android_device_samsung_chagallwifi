@@ -57,7 +57,6 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_CONFIG := cyanogenmod_chagallwifi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/chagallwifi
-#TARGET_PREBUILT_KERNEL := device/samsung/chagallwifi/kernel
 
 # Charging mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -82,7 +81,6 @@ BOARD_USES_FIMGAPI_V4L2 := false
 # Graphics
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-#BOARD_EGL_NEEDS_HANDLE_VALUE := true
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 
 # Exynos display
