@@ -149,6 +149,9 @@ BOARD_USES_GSC_VIDEO := true
 BOARD_SEPOLICY_DIRS += \
 	device/samsung/chagallwifi/sepolicy
 
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
+
 # Webkit
 ENABLE_WEBGL := true
 
