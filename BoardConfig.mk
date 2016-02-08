@@ -127,7 +127,7 @@ DONT_DEXPREOPT_PREBUILTS := true
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 
 # PowerHAL
-TARGET_POWERHAL_VARIANT := chagallwifi
+TARGET_POWERHAL_VARIANT := samsung
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
