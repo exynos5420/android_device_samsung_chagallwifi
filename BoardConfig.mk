@@ -157,7 +157,7 @@ BOARD_SEPOLICY_DIRS += \
     device/samsung/chagalllte/sepolicy
 
 # Sensors
-TARGET_NO_SENSOR_PERMISSION_CHECK := true
+# TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Webkit
 ENABLE_WEBGL := true
