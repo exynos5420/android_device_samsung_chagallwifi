@@ -16,3 +16,4 @@ type sysfs_input_file, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_scenario_file, fs_type, sysfs_type, mlstrustedobject;
 
 allow sysfs_type tmpfs:filesystem associate;
+type vcs_data_file, file_type, data_file_type;
