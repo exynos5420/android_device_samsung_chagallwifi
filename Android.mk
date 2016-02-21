@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),chagallwifi)
+ifeq ($(TARGET_DEVICE),chagalllte)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

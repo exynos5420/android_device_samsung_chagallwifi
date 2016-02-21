@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/chagallwifi
+LOCAL_PATH := device/samsung/chagalllte
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
@@ -235,4 +235,4 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5420/exynos5420.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/samsung/chagallwifi/chagallwifi-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/chagalllte/chagalllte-vendor.mk)

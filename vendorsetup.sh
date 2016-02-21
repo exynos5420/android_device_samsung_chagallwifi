@@ -1,1 +1,1 @@
-add_lunch_combo cm_chagallwifi-userdebug
+add_lunch_combo cm_chagalllte-userdebug
