@@ -27,6 +27,12 @@ ro.hwui.text_large_cache_height=1024
 persist.sys.isUsbOtgEnabled=true
 persist.sys.usb.config=mtp
 
+# Fixes game grashing (HeartStone)
+debug.egl.force_msaa=true
+
+# Disable persistent GPU compositing
+debug.sf.disable_hwc=1
+
 # Radio
 ro.radio.noril=yes
 
