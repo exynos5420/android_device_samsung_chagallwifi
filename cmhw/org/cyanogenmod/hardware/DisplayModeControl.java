@@ -79,20 +79,7 @@ public class DisplayModeControl {
      */
     public static DisplayMode getCurrentMode() {
 
-        String currentMode = FileUtils.readOneLine(CONTROL_PATH);
-
-        if (currentMode.equals("0")) {
-            return (ALL_ITEMS[0]);
-        } else if (currentMode.equals("1")) {
-            return (ALL_ITEMS[1]);
-        } else if (currentMode.equals("2")) {
-            return (ALL_ITEMS[2]);
-        } else if (currentMode.equals("3")) {
-            return (ALL_ITEMS[3]);
-        } else if (currentMode.equals("4")) {
-            return (ALL_ITEMS[4]);
-        } else
-            return null;
+            return (ALL_ITEMS[Integer.parseInt(FileUtils.readOneLine(CONTROL_PATH))]);
     }
 
     /*
