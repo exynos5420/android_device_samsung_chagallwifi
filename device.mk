@@ -59,6 +59,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.universal5420
 
+# HDMI
+PRODUCT_PACKAGES += \
+    libcec
+
 # HW composer
 PRODUCT_PACKAGES += \
     libion \
