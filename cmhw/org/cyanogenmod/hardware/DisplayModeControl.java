@@ -41,7 +41,7 @@ public class DisplayModeControl {
     
     private static final String DEFAULT_MODE_FILE = "/data/misc/.displaymodedefault";
 
-    private static final DisplayMode[] ALL_ITEMS = { new DisplayMode (0, "Dynamic"), new DisplayMode (1, "Standard"), new DisplayMode (2, "Natural"), new DisplayMode (3, "Movie"), new DisplayMode (4, "Auto")};
+    private static final DisplayMode[] ALL_ITEMS = { new DisplayMode (0, "Dynamic"), new DisplayMode (1, "Standard"), new DisplayMode (2, "Natural"), new DisplayMode (3, "Cinema"), new DisplayMode (4, "Basic")};
 
     /*
      * This is needed to get and set the user selected mode
