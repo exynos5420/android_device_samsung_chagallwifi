@@ -212,7 +212,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libnetcmdiface \
-    macloader
+    macloader \
+    modemloader
 
 # Charger
 PRODUCT_PACKAGES += \
