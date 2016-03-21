@@ -241,6 +241,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=speed \
     dalvik.vm.dex2oat-swap=false
 
+# cpboot-daemon for modem
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ril/sbin/cbd:root/sbin/cbd
+
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
