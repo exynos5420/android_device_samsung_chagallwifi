@@ -179,6 +179,7 @@ PRODUCT_PACKAGES += \
     fstab.universal5420 \
     init.samsung.rc \
     init.universal5420.rc \
+    init.universal5420.power.rc \
     init.universal5420.usb.rc \
     init.universal5420.wifi.rc \
     ueventd.universal5420.rc
