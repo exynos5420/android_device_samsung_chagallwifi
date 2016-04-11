@@ -91,6 +91,11 @@ PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
     ro.com.android.dataroaming=true
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.exynos5
