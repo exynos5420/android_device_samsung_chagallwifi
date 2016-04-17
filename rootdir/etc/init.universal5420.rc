@@ -50,6 +50,9 @@ on property:sys.boot_completed=1
     write /sys/module/cpu_boost/parameters/input_boost_freq 1200000
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
+    # Increase min_freq to avoid audio drops if screen is off
+    write /sys/devices/system/cpu/cpufreq/iks-cpufreq/min_freq 400000
+
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
@@ -353,6 +356,28 @@ on boot
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_ver_check
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_led_status
 
+# Additional permissions for power HAL
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_enter_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_enter_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_enter_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_enter_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_exit_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_exit_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_exit_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_exit_time
+
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_enter_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_enter_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_enter_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_enter_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_exit_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_exit_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_exit_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_exit_time
+
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/param_index
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/param_index
+
 on fs
 
 # Support Preload install apks
@@ -428,6 +453,16 @@ on fs
     chown system radio /sys/class/camera/front/front_camfw
     chown system radio /sys/class/camera/front/front_camtype
 
+    touch /data/CameraID.txt
+    chown media audio /data/CameraID.txt
+    chmod 0777 /data/CameraID.txt
+
+    touch /data/cal_data.bin
+    chown media audio /data/cal_data.bin
+    chmod 0777 /data/cal_data.bin
+
+    mkdir -p /data/camera 0777 media audio
+
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /sbin/watchdogd 10 20
     class core
@@ -490,7 +525,6 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     user gps
     group system inet net_raw
     ioprio be 0
-
 
 # MobiCore startup
 service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin
