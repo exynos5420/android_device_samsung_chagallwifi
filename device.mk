@@ -152,7 +152,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcsc
 
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -201,6 +200,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.universal5420
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
@@ -213,7 +216,6 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     libwpa_client \
     wpa_supplicant
-
 
 PRODUCT_PACKAGES += \
     libnetcmdiface \
