@@ -48,3 +48,11 @@ wifi.interface=wlan0
 
 #Adaptive Backlight
 #ro.cm.hardware.cabc=/sys/class/lcd/panel/power_reduce
+
+# SM-T805 Hardware Info
+ro.device.chipset=Exynos 5 Octa 5420
+ro.device.cpu=Octa-core, 1900 MHz, ARM Cortex-A15 & ARM Cortex-A7
+ro.device.gpu=ARM Mali-T628 MP6
+ro.device.rear_cam=8 MP, 1920x1080 (1080p HD) (30 fps)
+ro.device.front_cam=2.1 MP
+ro.device.screen_res=2560 x 1600 pixels (288 ppi pixel density)
