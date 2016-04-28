@@ -24,6 +24,11 @@ ro.hwui.text_large_cache_width=4096
 ro.hwui.text_large_cache_height=4096
 ro.hwui.fbo_cache_size=16
 
+# Net
+#ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax
+net.tcp.buffersize.default=4096,87380,704512,4096,16384,110208
+net.tcp.buffersize.wifi=524288,1048576,4525824,524288,1048576,4525824
+
 # Radio
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/ttyS0
