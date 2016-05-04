@@ -28,7 +28,7 @@
     <bool name="config_automatic_brightness_available">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>
+    <bool name="config_unplugTurnsOnScreen">false</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
@@ -174,6 +174,9 @@
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
+    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
@@ -272,7 +275,7 @@
     <bool name="config_enableTranslucentDecor">true</bool>
 
     <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">8</integer>
+    <integer name="config_multiuserMaximumUsers">4</integer>
 
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
@@ -282,6 +285,9 @@
       The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
 
+    <!-- Make things go fast -->
+    <bool name="config_ui_enableFadingMarquee">false</bool>
+
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
          cloud-to-device messaging service for apps to interact correctly with the modes
@@ -290,6 +296,9 @@
          correctly use them when installed on your device.  Otherwise, keep this disabled
          so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- Our modem doesn't support this query yet -->
     <string name="config_radio_access_family">GSM|WCDMA|LTE</string>
@@ -314,5 +323,16 @@
     <integer name="config_screenBrightnessDoze">10</integer>
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+
+    <!-- Flag specifying whether VoLTE is available on device -->
+    <bool name="config_device_volte_available">true</bool>
+
+    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_volte_available">true</bool>
+
+    <!-- Flag specifying whether VoLTE availability is based on provisioning -->
+    <bool name="config_carrier_volte_provisioned">false</bool>
 
 </resources>
