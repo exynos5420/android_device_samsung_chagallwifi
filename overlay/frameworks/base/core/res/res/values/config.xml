@@ -241,4 +241,7 @@
          correctly use them when installed on your device.  Otherwise, keep this disabled
          so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Whether to persist the notification for when a usb drive device is plugged in -->
+    <bool name="config_persistUsbDriveNotification">true</bool>
 </resources>
