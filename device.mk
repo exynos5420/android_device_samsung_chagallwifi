@@ -35,8 +35,10 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+    device/samsung/chagalllte/audio/audio_policy.conf:system/etc/audio_policy.conf
+
+PRODUCT_COPY_FILES += \
+    device/samsung/chagalllte/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
