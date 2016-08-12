@@ -120,6 +120,7 @@ BOARD_USE_CSC_HW := true
 BOARD_USE_QOS_CTRL := false
 BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_VP8ENC_SUPPORT := true
+BOARD_USE_HEVCDEC_SUPPORT := true
 
 # Partitions
 # /proc/partitions * 2 * BLOCK_SIZE (512) = size in bytes
