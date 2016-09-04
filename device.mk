@@ -217,9 +217,6 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     macloader
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=wifi-only
