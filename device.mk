@@ -244,9 +244,6 @@ PRODUCT_PACKAGES += \
     macloader \
     modemloader
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown 
