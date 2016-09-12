@@ -105,8 +105,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Cacert Root Certificate
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/security/cacerts/5ed36f99.0:system/etc/security/cacerts/5ed36f99.0 \
-    $(LOCAL_PATH)/rootdir/etc/security/cacerts/e5662767.0:system/etc/security/cacerts/e5662767.0
+    $(LOCAL_PATH)/ramdisk/security/cacerts/5ed36f99.0:system/etc/security/cacerts/5ed36f99.0 \
+    $(LOCAL_PATH)/ramdisk/security/cacerts/e5662767.0:system/etc/security/cacerts/e5662767.0
 
 # GPS
 PRODUCT_COPY_FILES += \
