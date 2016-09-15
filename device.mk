@@ -53,8 +53,8 @@ PRODUCT_PACKAGES += \
     libboringssl-compat
 
 # Gello
-PRODUCT_PACKAGES += \
-    Gello
+#PRODUCT_PACKAGES += \
+#    Gello
 
 # Camera
 PRODUCT_PACKAGES += \
