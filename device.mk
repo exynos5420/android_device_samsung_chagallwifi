@@ -218,10 +218,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.universal5420
 
-# hardware/samsung/AdvancedDisplay (MDNIE)
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
