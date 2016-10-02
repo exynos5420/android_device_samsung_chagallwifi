@@ -82,16 +82,12 @@ static bool append_number(char **buffer, int *len, int *size, int number)
 }
 
 
-#ifdef USE_ONE_FREQ_RANGE
 pthread_mutex_t g_mtx;
-#endif
 int fd = 0;
 static int consumerir_transmit(UNUSED struct consumerir_device *dev,
    int carrier_freq, const int pattern[], int pattern_len)
 {
-#ifdef USE_ONE_FREQ_RANGE
     pthread_mutex_lock(&g_mtx);
-#endif
     int buffer_len = 0;
     int buffer_size = 128;
     int i;
@@ -122,9 +118,7 @@ static int consumerir_transmit(UNUSED struct consumerir_device *dev,
 
     free(buffer);
 
-#ifdef USE_ONE_FREQ_RANGE
     pthread_mutex_unlock(&g_mtx);
-#endif
     return 0;
 
 error:
@@ -151,9 +145,7 @@ static int consumerir_close(hw_device_t *dev)
 {
     free(dev);
     close(fd);
-#ifdef USE_ONE_FREQ_RANGE
     pthread_mutex_destroy(&g_mtx);
-#endif
     return 0;
 }
 
@@ -163,9 +155,7 @@ static int consumerir_close(hw_device_t *dev)
 static int consumerir_open(const hw_module_t* module, const char* name,
         hw_device_t** device)
 {
-#ifdef USE_ONE_FREQ_RANGE
     pthread_mutex_init(&g_mtx, NULL);
-#endif
 
     if (strcmp(name, CONSUMERIR_TRANSMITTER) != 0) {
         return -EINVAL;
