@@ -274,10 +274,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    ro.sdcardfs.enable=true
 
-# cpboot-daemon for modem
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ril/sbin/cbd:root/sbin/cbd
-
 # SuperSU
 PRODUCT_COPY_FILES += \
     vendor/aicp/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
