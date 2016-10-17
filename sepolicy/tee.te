@@ -1,4 +1,3 @@
-allow tee kernel:system module_request;
 # mobicore
 
 # Allow to create files and directories /data/app/mcRegistry
