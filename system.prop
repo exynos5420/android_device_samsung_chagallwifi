@@ -53,3 +53,6 @@ ro.device.gpu=ARM Mali-T628 MP6
 ro.device.rear_cam=8 MP, 1920x1080 (1080p HD) (30 fps)
 ro.device.front_cam=2.1 MP
 ro.device.screen_res=2560 x 1600 pixels (288 ppi pixel density)
+
+# Storage
+ro.sdcardfs.enable=true
