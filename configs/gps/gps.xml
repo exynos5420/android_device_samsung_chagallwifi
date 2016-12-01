@@ -24,7 +24,6 @@
     SuplUT3Seconds="20"
     SuplVersion="1"
 
-    HulaEnable="false"
     LbsEnable="true"
     LbsServer="BCMLS2.glpals.com"
     HttpSyncLto="true"
