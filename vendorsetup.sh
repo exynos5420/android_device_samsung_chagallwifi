@@ -1,1 +1,1 @@
-add_lunch_combo aicp_chagalllte-userdebug
+add_lunch_combo ld_chagalllte-userdebug

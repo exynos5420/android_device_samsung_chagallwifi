@@ -22,20 +22,17 @@ TARGET_SOC := exynos5420
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-# hardware/samsung/ril
 BOARD_MODEM_TYPE := xmm7260
+BOARD_MODEM_NEEDS_VIDEO_CALL_FIELD := true
+
 # RIL.java overwrite
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
-BOARD_MODEM_NEEDS_VIDEO_CALL_FIELD := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := chagalllte
-
-# Clang
-USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_deathly_chagalllte_defconfig
@@ -57,9 +54,6 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
-
-# Fixes screen flicker
-TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
 # custom additions to updater-script
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagalllte/releasetools/ota_from_target_files
