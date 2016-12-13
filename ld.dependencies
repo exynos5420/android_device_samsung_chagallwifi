@@ -31,7 +31,7 @@
   },
   {
     "remote":      "github",
-    "repository":  "CyanogenMod/android_hardware_samsung_slsi-cm_exynos5",
+    "repository":  "exynos5420/android_hardware_samsung_slsi-cm_exynos5",
     "target_path": "hardware/samsung_slsi-cm/exynos5",
     "branch":      "cm-14.1"
   },
