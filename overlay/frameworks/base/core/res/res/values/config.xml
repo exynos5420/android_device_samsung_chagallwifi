@@ -62,6 +62,7 @@
 
     <!-- Our modem doesn't support this query yet -->
     <string name="config_radio_access_family">GSM|WCDMA|LTE</string>
+
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
@@ -89,8 +90,5 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. 
     <integer name="config_deviceHardwareWakeKeys">65</integer>-->
-
-    <!-- Boolean to enable stk functionality on Samsung phones -->
-    <bool name="config_samsung_stk">true</bool>
 
 </resources>
