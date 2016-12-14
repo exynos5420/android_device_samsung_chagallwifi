@@ -36,6 +36,7 @@ TARGET_OTA_ASSERT_DEVICE := chagalllte
 
 # Kernel
 TARGET_KERNEL_CONFIG := liquiddeathos_deathly_chagalllte_defconfig
+BOARD_CUSTOM_BOOTIMG := true
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
