@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libril \
     librilutils \
+    rild \
     libxml2 \
     libprotobuf-cpp-full \
     modemloader
