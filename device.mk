@@ -17,7 +17,9 @@
 LOCAL_PATH := device/samsung/chagalllte
 
 PRODUCT_CHARACTERISTICS := tablet
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/chagalllte/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := xlarge
@@ -78,6 +80,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/chagalllte/sepolicy    
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/chagalllte/chagalllte-vendor.mk)
