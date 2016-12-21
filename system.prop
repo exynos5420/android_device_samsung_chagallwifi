@@ -27,4 +27,4 @@ ro.device.front_cam=2.1 MP
 ro.device.screen_res=2560 x 1600 pixels (288 ppi pixel density)
 
 # Storage
-ro.sdcardfs.enable=true
+#ro.sdcardfs.enable=true
