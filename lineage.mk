@@ -5,7 +5,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 # Inherit from chagalllte device
 $(call inherit-product, device/samsung/chagalllte/device.mk)
 
+PRODUCT_NAME := full_chagalllte
+PRODUCT_DEVICE := chagalllte
 PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SM-T805
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
