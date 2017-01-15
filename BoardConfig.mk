@@ -38,7 +38,7 @@ TARGET_OTA_ASSERT_DEVICE := chagalllte
 USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_deathly_chagalllte_defconfig
+TARGET_KERNEL_CONFIG := lineageos_deathly_chagalllte_defconfig
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
