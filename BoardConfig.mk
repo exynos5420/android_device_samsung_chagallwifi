@@ -62,6 +62,9 @@ BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
 # Fixes screen flicker
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
+# Cyanogen Hardware
+BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
+
 # custom additions to updater-script
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagalllte/releasetools/ota_from_target_files
 
