@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/chagalllte
+LOCAL_PATH := device/samsung/chagallwifi
 
 # Platform
 BOARD_VENDOR := samsung
@@ -32,10 +32,10 @@ BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Bootloader
-TARGET_OTA_ASSERT_DEVICE := chagalllte
+TARGET_OTA_ASSERT_DEVICE := chagallwifi
 
 # Kernel
-TARGET_KERNEL_CONFIG := liquiddeathos_deathly_chagalllte_defconfig
+TARGET_KERNEL_CONFIG := liquiddeathos_deathly_chagallwifi_defconfig
 BOARD_CUSTOM_BOOTIMG := true
 
 # Include path
@@ -51,10 +51,10 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
-BOARD_SEPOLICY_DIRS += device/samsung/chagalllte/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/chagallwifi/sepolicy
 
 # custom additions to updater-script
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagalllte/releasetools/ota_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagallwifi/releasetools/ota_from_target_files
 
 # Inherit from exynos5420-common
 include device/samsung/exynos5420-common/BoardConfigCommon.mk

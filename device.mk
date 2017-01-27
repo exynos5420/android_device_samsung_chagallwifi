@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/chagalllte
+LOCAL_PATH := device/samsung/chagallwifi
 
 PRODUCT_CHARACTERISTICS := tablet
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/chagalllte/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/chagallwifi/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := xlarge
@@ -87,7 +87,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/chagalllte/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/chagallwifi/sepolicy
 
 # call dalvik heap and hwui config
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
@@ -95,7 +95,7 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/chagalllte/chagalllte-vendor.mk)
+$(call inherit-product, vendor/samsung/chagallwifi/chagallwifi-vendor.mk)
 
 # Import the common tree changes
 include device/samsung/exynos5420-common/exynos5420.mk

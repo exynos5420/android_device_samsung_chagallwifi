@@ -2,12 +2,12 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 
-# Inherit from chagalllte device
-$(call inherit-product, device/samsung/chagalllte/device.mk)
+# Inherit from chagallwifi device
+$(call inherit-product, device/samsung/chagallwifi/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_chagalllte
-PRODUCT_DEVICE := chagalllte
+PRODUCT_NAME := full_chagallwifi
+PRODUCT_DEVICE := chagallwifi
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-T805
+PRODUCT_MODEL := SM-T800
