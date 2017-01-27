@@ -1,24 +1,15 @@
 #
-# system.prop for chagalllte
+# system.prop for chagallwifi
 #
 
 # UI
 ro.sf.lcd_density=320
 
-# Radio
-rild.libpath=/system/lib/libsec-ril.so
-rild.libargs=-d /dev/ttyS0
-ro.telephony.default_network=9
-ro.telephony.ril_class=SlteRIL
-ro.ril.telephony.mqanelements=5
-
 # Randomly from stock
-ro.ril.gprsclass=10
-ro.ril.hsxpa=1
 ro.sec.fle.encryption=true
 ro.secwvk=220
 
-# SM-T805 Hardware Info
+# SM-T800 Hardware Info
 ro.device.chipset=Exynos 5 Octa 5420
 ro.device.cpu=Octa-core, 1900 MHz, ARM Cortex-A15 & ARM Cortex-A7
 ro.device.gpu=ARM Mali-T628 MP6
