@@ -1,1 +1,1 @@
-add_lunch_combo lineage_chagalllte-userdebug
+add_lunch_combo lineage_chagallwifi-userdebug

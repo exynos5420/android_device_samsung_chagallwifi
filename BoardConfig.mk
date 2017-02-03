@@ -14,31 +14,23 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/chagalllte
+LOCAL_PATH := device/samsung/chagallwifi
 
 # Platform
 BOARD_VENDOR := samsung
 TARGET_SOC := exynos5420
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-# hardware/samsung/ril
-BOARD_MODEM_TYPE := xmm7260
-# RIL.java overwrite
-BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
-BOARD_MODEM_NEEDS_VIDEO_CALL_FIELD := true
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Bootloader
-TARGET_OTA_ASSERT_DEVICE := chagalllte
+TARGET_OTA_ASSERT_DEVICE := chagallwifi
 
 # Clang
 USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_deathly_chagalllte_defconfig
+TARGET_KERNEL_CONFIG := lineageos_deathly_chagallwifi_defconfig
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -57,7 +49,6 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
-BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
 
 # Fixes screen flicker
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
@@ -66,7 +57,7 @@ TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
 
 # custom additions to updater-script
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagalllte/releasetools/ota_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/chagallwifi/releasetools/ota_from_target_files
 
 # Inherit from exynos5420-common
 include device/samsung/exynos5420-common/BoardConfigCommon.mk
