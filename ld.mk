@@ -20,4 +20,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_MODEL=SM-T800 \
     PRODUCT_NAME=chagallwifi \
     PRODUCT_DEVICE=chagallwifi \
-    TARGET_DEVICE=chagallwifi
+    TARGET_DEVICE=chagallwifi \
+
+# LD Device Maintainers
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	DEVICE_MAINTAINERS="Darragh McGee (DarkExistence)"
