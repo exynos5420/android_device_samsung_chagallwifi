@@ -1,9 +1,0 @@
-ui_print("");
-ui_print("Making symlinks for the diffrent Samsung wifi firmware variants");
-ui_print("");
-mount("ext4", "EMMC", "/dev/block/platform/dw_mmc.0/by-name/SYSTEM", "/system", "");
-symlink("/system/etc/wifi/bcmdhd_apsta.bin", "/system/etc/wifi/bcmdhd_apsta.bin_4354_a1");
-symlink("/system/etc/wifi/bcmdhd_ibss.bin", "/system/etc/wifi/bcmdhd_ibss.bin_4354_a1");
-symlink("/system/etc/wifi/bcmdhd_mfg.bin", "/system/etc/wifi/bcmdhd_mfg.bin_4354_a1");
-symlink("/system/etc/wifi/bcmdhd_sta.bin", "/system/etc/wifi/bcmdhd_sta.bin_4354_a1");
-unmount("/system");
