@@ -26,6 +26,10 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := chagallwifi
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/chagallwifi/releasetools
+TARGET_BOARD_INFO_FILE ?= device/samsung/chagallwifi/board-info.txt
+
 # Kernel
 TARGET_KERNEL_CONFIG := liquiddeathos_deathly_chagallwifi_defconfig
 BOARD_CUSTOM_BOOTIMG := true
