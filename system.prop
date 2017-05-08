@@ -14,7 +14,7 @@ ro.ril.hsxpa=1
 ro.sec.fle.encryption=true
 ro.secwvk=220
 
-# SM-T805 Hardware Info
+# SM-T800 Hardware Info
 ro.device.chipset=Exynos 5 Octa 5420
 ro.device.cpu=Octa-core, 1900 MHz, ARM Cortex-A15 & ARM Cortex-A7
 ro.device.gpu=ARM Mali-T628 MP6
