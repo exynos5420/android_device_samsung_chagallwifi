@@ -5,8 +5,11 @@
 # UI
 ro.sf.lcd_density=320
 
+ro.assert.device=chagallwifi
+
 # Radio
 ro.radio.noril=yes
+ro.carrier=unknown
 
 # Randomly from stock
 ro.ril.gprsclass=10
