@@ -1,9 +1,6 @@
 # All unpinned blobs are from T800XXU1CRJ1
 # Vendor security patch level 2017-08-01
 
-# DRM
-lib/liboemcrypto.so:vendor/lib/liboemcrypto.so
-
 # GPS
 bin/gpsd:vendor/bin/gpsd
 etc/floating_feature.xml:vendor/etc/floating_feature.xml
