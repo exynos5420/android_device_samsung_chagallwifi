@@ -60,3 +60,9 @@ on boot
     chown system radio /sys/class/sensors/grip_sensor/calibration
     chown system radio /sys/class/sensors/grip_sensor/threshold
     chown system radio /sys/class/sensors/grip_sensor/onoff
+    
+# Wifi
+    symlink /system/etc/wifi/bcmdhd_apsta.bin /system/etc/wifi/bcmdhd_apsta.bin_4354_a1
+    symlink /system/etc/wifi/bcmdhd_ibss.bin /system/etc/wifi/bcmdhd_ibss.bin_4354_a1
+    symlink /system/etc/wifi/bcmdhd_mfg.bin /system/etc/wifi/bcmdhd_mfg.bin_4354_a1
+    symlink /system/etc/wifi/bcmdhd_sta.bin /system/etc/wifi/bcmdhd_sta.bin_4354_a1
