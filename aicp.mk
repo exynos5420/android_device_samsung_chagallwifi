@@ -10,10 +10,10 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SM-T800
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+# Inherit some common AICP stuff.
+$(call inherit-product, vendor/aicp/config/common_full_tablet_wifionly.mk)
 
-PRODUCT_NAME := lineage_chagallwifi
+PRODUCT_NAME := aicp_chagallwifi
 PRODUCT_DEVICE := chagallwifi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
