@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_gps
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2016-09-01
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
