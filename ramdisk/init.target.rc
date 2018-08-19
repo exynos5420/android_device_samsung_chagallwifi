@@ -1,5 +1,4 @@
 on init
-
     export LD_SHIM_LIBS "/system/bin/gpsd|libshim.so"
 
 on post-fs-data
@@ -7,7 +6,12 @@ on post-fs-data
     chown system root /sys/devices/virtual/sec/sec_touchkey/touchkey_enabled
 
 on boot
-    stop ril-daemon
+# Fingerprint
+    mkdir /dev/validity 0770 system system
+    mkdir /data/validity 0770 system system
+
+# Fingerprint Sensor
+    chown system radio /sys/class/fingerprint/fingerprint/type_check
 
 # Headphones (Headset)
     chown system system /sys/class/input/input11/enabled
@@ -61,12 +65,13 @@ on boot
     chown system radio /sys/class/sensors/grip_sensor/threshold
     chown system radio /sys/class/sensors/grip_sensor/onoff
 
-on fs
-# Fingerprint
-    mkdir /dev/validity 0770 system system
+service fingerprintd /system/bin/fingerprintd
+    class main
+    user system
+    group input
 
 # SENSOR FRAMEWORK : starts fingerprintService
 service vcsFPService /system/bin/vcsFPService
-    class late_start
+    class main
     user system
     group system
