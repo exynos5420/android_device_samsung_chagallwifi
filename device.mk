@@ -62,6 +62,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.universal5420.rc
 
+# Sensors wrapper
+PRODUCT_PACKAGES += \
+    sensors.universal5420
 
 # call dalvik heap and hwui config
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
