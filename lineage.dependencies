@@ -1,0 +1,6 @@
+[
+    {
+        "repository": "android_device_samsung_chagall-common",
+        "target_path": "device/samsung/chagall-common"
+    }
+]
