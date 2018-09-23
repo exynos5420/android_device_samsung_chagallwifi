@@ -16,5 +16,9 @@
 
 LOCAL_PATH := device/samsung/chagallwifi
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.target.rc
+
 # Inherit from chagall-common
 $(call inherit-product, device/samsung/chagall-common/device-common.mk)
