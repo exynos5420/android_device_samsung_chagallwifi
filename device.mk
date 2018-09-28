@@ -18,6 +18,10 @@ LOCAL_PATH := device/samsung/chagallwifi
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.xml
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.target.rc
