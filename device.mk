@@ -22,3 +22,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit from chagall-common
 $(call inherit-product, device/samsung/chagall-common/device-common.mk)
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/samsung/chagallwifi/chagallwifi-vendor.mk)

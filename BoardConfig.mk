@@ -33,3 +33,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12629049344
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
+
+
+# Inherit from the proprietary version
+-include vendor/samsung/chagallwifi/BoardConfigVendor.mk
