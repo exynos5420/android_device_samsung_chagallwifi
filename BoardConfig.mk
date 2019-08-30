@@ -30,9 +30,6 @@ TARGET_OTA_ASSERT_DEVICE := chagallwifi
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/chagallwifi/releasetools
 TARGET_BOARD_INFO_FILE ?= device/samsung/chagallwifi/board-info.txt
 
-# Clang
-USE_CLANG_PLATFORM_BUILD := true
-
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_chagallwifi_defconfig
 
