@@ -37,7 +37,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
-    /system/bin/gpsd|/system/lib/libshim_gps.so
+    /vendor/bin/gpsd|/vendor/lib/libshim_gps.so
 
 # Inherit from the proprietary version
 -include vendor/samsung/chagallwifi/BoardConfigVendor.mk

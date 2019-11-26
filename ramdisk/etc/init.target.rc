@@ -63,7 +63,7 @@ on post-fs-data
     chown system root /sys/devices/virtual/sec/sec_touchkey/touchkey_enabled
 
 # SENSOR FRAMEWORK : starts fingerprintService
-service vcsFPService /system/bin/vcsFPService
+service vcsFPService /vendor/bin/vcsFPService
     class main
     user system
     group system
