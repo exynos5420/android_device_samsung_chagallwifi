@@ -34,7 +34,7 @@ TARGET_BOARD_INFO_FILE ?= device/samsung/chagallwifi/board-info.txt
 USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_deathly_chagallwifi_defconfig
+TARGET_KERNEL_CONFIG := lineageos_chagallwifi_defconfig
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
