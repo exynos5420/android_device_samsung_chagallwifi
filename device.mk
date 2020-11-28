@@ -54,7 +54,7 @@ PRODUCT_PACKAGES += \
 
 # Shim
 PRODUCT_PACKAGES += \
-    libshim
+    libshim_gpsd
 
 # Permissions
 PRODUCT_COPY_FILES += \

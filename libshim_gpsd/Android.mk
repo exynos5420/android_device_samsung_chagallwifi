@@ -18,8 +18,8 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SHARED_LIBRARIES := liblog libcutils libgui libbinder libutils
-LOCAL_SRC_FILES := libshim.cpp
-LOCAL_MODULE := libshim
+LOCAL_SHARED_LIBRARIES := liblog libcutils libgui libbinder libutils libsensor
+LOCAL_SRC_FILES := libshim_gpsd.cpp
+LOCAL_MODULE := libshim_gpsd
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
