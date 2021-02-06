@@ -34,7 +34,7 @@ TARGET_BOARD_INFO_FILE ?= device/samsung/chagallwifi/board-info.txt
 TARGET_KERNEL_CONFIG := lineageos_chagallwifi_defconfig
 
 # Include path
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/lineagehw
