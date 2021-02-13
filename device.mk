@@ -66,6 +66,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.universal5420.rc
 
+# System Properties
+$(call inherit-product, device/samsung/chagallwifi/system_prop.mk)
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
