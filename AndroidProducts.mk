@@ -15,3 +15,8 @@
 
  PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_chagallwifi.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_chagallwifi-user \
+    lineage_chagallwifi-userdebug \
+    lineage_chagallwifi-eng
