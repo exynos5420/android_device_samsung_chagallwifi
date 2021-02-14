@@ -39,7 +39,6 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd \
     fingerprint.universal5420 \
     validityService
 
