@@ -34,4 +34,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_MODEL=SM-T800 \
     PRODUCT_NAME=chagallwifi \
     PRODUCT_DEVICE=chagallwifi \
+    PRIVATE_BUILD_DESC="samsung/chagallwifixx/chagallwifi:6.0.1/MMB29K/T800XXU1CRJ1:user/release-keys" \
     TARGET_DEVICE=chagallwifi
+
+BUILD_FINGERPRINT := samsung/chagallwifixx/chagallwifi:6.0.1/MMB29K/T800XXU1CRJ1:user/release-keys
+
