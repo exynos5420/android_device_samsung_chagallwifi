@@ -76,4 +76,7 @@
 
     <!-- VCS limits the number of fingerprints per user to 3 -->
     <integer name="config_fingerprintMaxTemplatesPerUser">3</integer>
+
+    <!-- Enable button brightness -->
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 </resources>
