@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
 # System Properties
 $(call inherit-product, device/samsung/chagallwifi/system_prop.mk)
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2017-08-01
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
