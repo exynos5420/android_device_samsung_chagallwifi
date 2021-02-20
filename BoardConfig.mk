@@ -26,6 +26,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := chagallwifi
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/chagallwifi/releasetools
 TARGET_BOARD_INFO_FILE ?= device/samsung/chagallwifi/board-info.txt
