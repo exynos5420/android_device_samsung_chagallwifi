@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4117c574_d9fde2e2",
+        "filename": "configs/gps/gps.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2021-02-20T07:36:21Z",
+      "side": 0,
+      "message": "This will need to stay at sdcard0 since emulated is deprecated.",
+      "revId": "6572e9c3bc4e0eb2b655960da7dce05ab9d8e5b9",
+      "serverId": "c6d92919-bfe7-411c-9f64-004a8163e0f0",
+      "unresolved": true
+    }
+  ]
+}
