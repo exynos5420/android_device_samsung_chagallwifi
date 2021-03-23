@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2016-09-01
+    ro.lineage.build.vendor_security_patch=2017-08-01
 
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
