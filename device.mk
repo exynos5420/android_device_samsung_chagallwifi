@@ -26,6 +26,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.target.rc
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_gps
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
