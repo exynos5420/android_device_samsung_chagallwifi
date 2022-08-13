@@ -7,6 +7,9 @@ etc/floating_feature.xml:vendor/etc/floating_feature.xml
 lib/hw/gps.default.so:vendor/lib/hw/gps.universal5420.so
 lib/libfloatingfeature.so:vendor/lib/libfloatingfeature.so
 
+# IR Blaster
+lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.universal5420.so
+
 # NXP Noise Cancelling
 vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_ANALOG_DOCK.txt
 vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
