@@ -35,6 +35,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=chagallwifi \
-    PRIVATE_BUILD_DESC="chagallwifixx-user 6.0.1 MMB29K T800XXU1CRJ1 release-keys"
+    PRIVATE_BUILD_DESC="chagallwifixx-user 6.0.1 MMB29K T800OXA1CVG1 release-keys"
 
-BUILD_FINGERPRINT := samsung/chagallwifixx/chagallwifi:6.0.1/MMB29K/T800XXU1CRJ1:user/release-keys
+BUILD_FINGERPRINT := samsung/chagallwifixx/chagallwifi:6.0.1/MMB29K/T800OXA1CVG1:user/release-keys
