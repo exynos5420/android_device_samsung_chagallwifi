@@ -1,4 +1,4 @@
-# All unpinned blobs are from T800XXU1CRJ1
+# All unpinned blobs are from T800OXA1CVG1
 # Vendor security patch level 2017-08-01
 
 # GPS
