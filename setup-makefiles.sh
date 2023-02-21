@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2017-2021 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -9,8 +10,6 @@ set -e
 
 DEVICE=chagallwifi
 VENDOR=samsung
-
-export INITIAL_COPYRIGHT_YEAR=2017
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -28,10 +27,9 @@ source "${HELPER}"
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 
-# Copyright headers and guards
+# Warning headers and guards
 write_headers
 
-# The standard blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish

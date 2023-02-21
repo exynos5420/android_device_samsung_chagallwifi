@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2018-2021 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -26,6 +27,9 @@ source "${HELPER}"
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
+KANG=
+SECTION=
+
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
         -n | --no-cleanup )
@@ -49,18 +53,20 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+	vendor/lib/libfloatingfeature.so)
+	    sed -i "s|system/etc|vendor/etc|g" "${2}"
+	    ;;
+	vendor/bin/gpsd)
+	    sed -i "s/SSLv3_client_method/SSLv23_method\x00\x00\x00\x00\x00\x00/" "${2}"
+	    ;;
+    esac
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-
-# Fix proprietary blobs
-BLOB_ROOT="$ANDROID_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-# Vendor separation
-sed -i "s|system/etc|vendor/etc|g" $BLOB_ROOT/vendor/lib/libfloatingfeature.so
-
-# replace SSLv3_client_method with SSLv23_method
-sed -i "s/SSLv3_client_method/SSLv23_method\x00\x00\x00\x00\x00\x00/" $BLOB_ROOT/vendor/bin/gpsd
 
 "${MY_DIR}/setup-makefiles.sh"
